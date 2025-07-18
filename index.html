@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naomie Teki - Ambassadrice de la Mode Africaine</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #d4af37;
+        --red: #c41e3a;
+        --green: #006a4e;
+        --blue: #0047ab;
+        --dark: #1a1a1a;
+        --light: #f9f5eb;
+        --sand: #e1c699;
+        --text: #333333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--light);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: rgba(26, 26, 26, 0.95);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        padding: 1rem 0;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--gold);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: var(--red);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--gold);
+        transition: width 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/490583275_1978757575992034_498569991653706280_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG7iZ4HsAPGIZnWT-FKR0ZYZmaQsH6dN-1mZpCwfp037YS37fG5_75AnVHyRUH65LDzabNlsSO2QIsE0zSEWT_Z&_nc_ohc=m4RZTXWIf7sQ7kNvwHoVLWW&_nc_oc=Adld4dnHqR7ZNX4YfO5eMvOUhtiCPKqdKWvHv_UhvRTPTmGimhYfDWp_z_icVr21mH6p7JpO_8Vt9Z6RuM08D1RS&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=CUGtP2wYt2tuJVEa-FvnHg&oh=00_AfSAaNpkl03K3itxTlVCkHxF5X7VRPzLBu9ZN95Zs0cj0Q&oe=68807D18")
+            top center/cover fixed no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--light);
+        padding: 0 20px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        animation: fadeInDown 1.5s ease;
+      }
+
+      .hero h1 span {
+        color: var(--gold);
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1.5s ease;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: linear-gradient(45deg, var(--gold), var(--red));
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: pulse 2s infinite;
+        border: none;
+        cursor: pointer;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        animation: none;
+      }
+
+      /* About Section */
+      .about {
+        padding: 100px 0;
+        background-color: var(--light);
+      }
+
+      .section-title {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        margin-bottom: 3rem;
+        color: var(--dark);
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, var(--gold), var(--red));
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-img {
+        flex: 1;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        transition: transform 0.5s;
+      }
+
+      .about-img:hover {
+        transform: scale(1.03);
+      }
+
+      .about-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .signature {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 700;
+        color: var(--gold);
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      /* Portfolio Sections */
+      .portfolio {
+        padding: 100px 0;
+        background-color: #fff;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .portfolio-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        height: 400px;
+        cursor: pointer;
+        transition: transform 0.5s, box-shadow 0.5s;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .portfolio-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .portfolio-item:hover .portfolio-img {
+        transform: scale(1.1);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        color: white;
+        transform: translateY(30px);
+        opacity: 0;
+        transition: transform 0.5s, opacity 0.5s;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .portfolio-overlay h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-overlay p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .fabric-tag {
+        display: inline-block;
+        background-color: var(--gold);
+        color: var(--dark);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      /* Message Section */
+      .message {
+        padding: 100px 0;
+        background: linear-gradient(
+            rgba(26, 26, 26, 0.9),
+            rgba(26, 26, 26, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80")
+            center/cover fixed;
+        color: var(--light);
+        text-align: center;
+      }
+
+      .message h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        margin-bottom: 30px;
+      }
+
+      .message p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto 30px;
+      }
+
+      .highlight {
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: var(--light);
+        padding: 50px 0 20px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+
+      .footer-section {
+        flex: 1;
+        padding: 0 20px;
+      }
+
+      .footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--gold);
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-section h3::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background-color: var(--gold);
+        bottom: 0;
+        left: 0;
+      }
+
+      .footer-section p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--gold);
+        border-radius: 50%;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--gold);
+        color: var(--dark);
+        transform: translateY(-5px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+        }
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .about-content {
+          flex-direction: column;
+        }
+
+        .hero h1 {
+          font-size: 3.5rem;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+
+        .hero p {
+          font-size: 1.2rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo"><i class="fas fa-ankh"></i>Naomie Teki</a>
+          <ul class="nav-links">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#message">Message</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Porter sa <span>culture</span> avec fierté</h1>
+        <p>Modèle ivoirienne et ambassadrice de la mode africaine</p>
+        <a href="#portfolio" class="cta-btn">Découvrir mon univers</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">À propos de Naomie</h2>
+        <div class="about-content animate-on-scroll">
+          <div class="about-img">
+            <img
+              src="https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/490268366_1978616486006143_9117843340373106054_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFOaXMs9is5b0FijaoxI1JUhMADJLOeXNyEwAMks55c3F6TKyQjkMBshNJRqK3r4yfDcyZyVNG2LPNdD5ycwWcW&_nc_ohc=eOHYw9DKKzYQ7kNvwGIeraV&_nc_oc=AdlPfaG3GGwK3KzJUQfXeWOHpxGG0eGszlcwA46eoNiOLFmwGHpNlEocJf5anBovnATJbIsPXEXOuNE2tYHEbhF-&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=dVXcQjo6rJs74DieOP7Wcw&oh=00_AfSnAWqcKIE1wTr2E10gB66LWvocrzV0_K8_GbeXaJbBPA&oe=688091AF"
+              alt="Naomie Teki"
+            />
+          </div>
+          <div class="about-text">
+            <h2>Ambassadrice de la mode africaine</h2>
+            <p>
+              Originaire de la Côte d'Ivoire, Naomie Teki est bien plus qu'un
+              mannequin. Elle incarne l'élégance et la richesse de la mode
+              africaine à travers le monde. Son parcours unique allie tradition
+              et modernité, créant un pont entre les savoir-faire ancestraux et
+              la scène internationale de la mode.
+            </p>
+            <p>
+              Diplômée en BTP, Naomie Teki a consacré sa carrière à la
+              valorisation de la mode africaine. Elle collabore étroitement avec
+              des artisans locaux pour préserver les techniques traditionnelles
+              tout en les réinterprétant de façon contemporaine.
+            </p>
+            <p>
+              "Notre héritage textile est une forme d'art vivant. Chaque motif,
+              chaque couleur raconte une histoire - c'est cette histoire que je
+              veux partager avec le monde."
+            </p>
+            <div class="signature">Naomie Teki</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2 class="section-title">Mon Univers Créatif</h2>
+        <div class="portfolio-grid">
+          <!-- Traditional Wear -->
+          <div class="portfolio-item animate-on-scroll">
+            <img
+              src="https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/485748636_1961782101022915_4428717480137108373_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFTI1GsNuo_oejMDwwPFGBxwwxVLvzLyFfDDFUu_MvIV-kWb9jnyPSBj9P95DEbLaenh70WcTgk6LZ43kmDeDtF&_nc_ohc=uabeaccqs9cQ7kNvwGgVwWt&_nc_oc=AdnAc-3vBRJi0PdcP0hqWWcFA25dglfIbGVMw6z-0VrZJl8Ls3Io6hT4pjscnRdEVGMQiWD23T7SvAUwmcgUy64l&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=r0rO-4wOw9p53O8YaszJ_w&oh=00_AfQUYUB8VyunrFBAQQOgaT0T9DcWDBIHuuIL2nqP-EKHmw&oe=6880860C"
+              alt="Tenue traditionnelle"
+              class="portfolio-img"
+            />
+            <div class="portfolio-overlay">
+              <h3>Élégance Traditionnelle</h3>
+              <p>
+                Robe en Kente tissé à la main, motifs Adinkra symbolisant la
+                sagesse et l'unité. Collaboration avec les tisserands d'Abidjan.
+              </p>
+              <span class="fabric-tag">Kente • Côte d'Ivoire</span>
+            </div>
+          </div>
+          <div class="portfolio-item animate-on-scroll">
+            <img
+              src="https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/490342238_1978757642658694_8302597054131497893_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHC875Z4UmS5bT6svMvUFzKHbb8lpVoCTodtvyWlWgJOmilXwJq7VxuTEsVs7ZS7Jii4igZCruOh8tVQBlY9ABk&_nc_ohc=ASAoGQZD4C8Q7kNvwHuAXQe&_nc_oc=AdltVVeuvsyHd4va9GdmHSGhkHqqef8kYDgKS0ZdKMFC8pdr9-XiNWkFR4UTKGa9_PrqnC9dIrH28mdwdlChk5xv&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=FoRWwPWc3ppspdpTHDBlyw&oh=00_AfR7w2blgZkxVo6kpM71tjoZKzc_9266G2nK2umkcVUB_g&oe=68809ED6"
+              alt="Style Afro-futuriste"
+              class="portfolio-img"
+            />
+            <div class="portfolio-overlay">
+              <h3>Afro-Futurisme</h3>
+              <p>
+                Collection "Nouveau Souffle" par Maison Afrique. Wax réinventé
+                avec des coupes modernes et des silhouettes audacieuses.
+              </p>
+              <span class="fabric-tag">Wax • Design Contemporain</span>
+            </div>
+          </div>
+
+          <!-- Street Style -->
+          <div class="portfolio-item animate-on-scroll">
+            <img
+              src="https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/485972592_1959920311209094_5315343814234715771_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE-XhJ5P7HXbhd4gha-Ejhxhz991dme28-HP33V2Z7bz3F2wV1ZOovELSeQmjKctfxgy7BseD1zEKs89pOsMmby&_nc_ohc=FU8ZPzHnCU0Q7kNvwGNj7wq&_nc_oc=Adki2xnHn6SqErfisX_YmNmbGOwjCuC0IMyLjHm9gmUj89lVGqP_EAYVn_3oZTsrBLnvalk8V0_d4LsNm4qFmNF7&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=MxjbSfMvKZOjkAkdcx0f8g&oh=00_AfQ-rWW2or7JOim6EdRm8dLiq1maUsMGYf8Dy-r1wswgqQ&oe=68808F7E"
+              alt="Street style"
+              class="portfolio-img"
+            />
+            <div class="portfolio-overlay">
+              <h3>Street Style Urbain</h3>
+              <p>
+                Bomber en Bogolan teint à la main, associé à un jean customisé.
+                Pièce unique créée par l'atelier Djemba de Bamako.
+              </p>
+              <span class="fabric-tag">Bogolan • Mali</span>
+            </div>
+          </div>
+
+          <!-- Texture Close-up -->
+          <div class="portfolio-item animate-on-scroll">
+            <img
+              src="https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/480727011_1936378713563254_6467255833276926829_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEO4XjuJv8xhVLWno9oCluClHN6h3c9Yz2Uc3qHdz1jPTToX73VHshARyQGNCUklRcH6c-hPUGSv15FF5mzMQLq&_nc_ohc=7t-iPolpRuwQ7kNvwFaKJsQ&_nc_oc=AdlS3yhIS1AMppgKzH8XRR4A_jrHQj4l9ujZ40f_Vx-3O9o6KoiQnrd6Dx7VYy1mTN8JBdMJzpXeHCNvVKemaNdW&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=FP8-PfKwFfRGBriqV3tDUA&oh=00_AfQvGcCqzUpCduyDTntUJYjKs9um7auXHDwMDBd5Jadr0Q&oe=688095BA"
+              alt="Détails textiles"
+              class="portfolio-img"
+            />
+            <div class="portfolio-overlay">
+              <h3>Art du Détail</h3>
+              <p>
+                Perles et broderies artisanales sur soie tissée. Chaque perle
+                est placée à la main par des artisanes de Grand-Bassam.
+              </p>
+              <span class="fabric-tag">Soie • Broderie</span>
+            </div>
+          </div>
+
+          <!-- Cultural Background -->
+          <div class="portfolio-item animate-on-scroll">
+            <img
+              src="https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/484649417_1955691954965263_778126031071067671_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHIRkf_GPtj1etSnC1h0BCWxlZscrC4kN7GVmxysLiQ3l89z93tGT8-OhoG4D2VmrS8EsFj45h7OXLV9lnqgxye&_nc_ohc=CbZyFVJUg-gQ7kNvwEM2DKU&_nc_oc=AdmoWe3Vi2ZnvXHji66gGpgL0fqLl1rXHHpTBYlC6kjZ2DPKp8dyGIzRESKHMIZysGiqgKusy6iBwqu2cuC7fe-q&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=tMm6yUTfsX5m-rAYEItOAQ&oh=00_AfR53ochpHQiGJJl8nhvx-BZy5eyeNGptHluqgzePLBA0A&oe=68808142"
+              alt="Marché local"
+              class="portfolio-img"
+            />
+            <div class="portfolio-overlay">
+              <h3>Racines et Inspirations</h3>
+              <p>
+                Shooting au cœur du marché de Treichville, où les tissus
+                prennent vie parmi les couleurs et l'énergie de la ville.
+              </p>
+              <span class="fabric-tag">Abidjan • Culture</span>
+            </div>
+          </div>
+
+          <!-- Designer Collaboration -->
+          <div class="portfolio-item animate-on-scroll">
+            <img
+              src="https://scontent.fabj3-2.fna.fbcdn.net/v/t39.30808-6/487454749_1969635776904214_6666701610938048252_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFzz0E6QtBeZMxXOpnJH1xp0tcDUh5sx7DS1wNSHmzHsOpVm7fBAqwBvX-xyD33lqBnHSMCnaSotLfpSoiZ7RTa&_nc_ohc=vRWjSrm7vBkQ7kNvwH7woLz&_nc_oc=Adl6m4q8E_b2Sy_8O9YZsRj99ZI_n3VKt1unEL5_74-1fqgU8PAVh9kJzZo7nc_IaCHL-DqTiskwEswOV-E6CSUz&_nc_zt=23&_nc_ht=scontent.fabj3-2.fna&_nc_gid=jaZPEY5cC6hKQM6Vk2nsZg&oh=00_AfQ-2BeCofaQhNtrqiyEWaQ7VIl1IrF3c5qiQR-GZmsSVA&oe=68807340"
+              alt="Collaboration"
+              class="portfolio-img"
+            />
+            <div class="portfolio-overlay">
+              <h3>Création Collective</h3>
+              <p>
+                En atelier avec le designer Kwame Adjani. Fusion de techniques
+                traditionnelles Baoulé et design minimaliste scandinave.
+              </p>
+              <span class="fabric-tag">Collaboration • Innovation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message" class="message">
+      <div class="container animate-on-scroll">
+        <h2>Message aux Marques et Collaborateurs</h2>
+        <p>
+          Je recherche des partenariats authentiques avec des marques qui
+          valorisent <span class="highlight">l'artisanat africain</span>,
+          privilégient des pratiques <span class="highlight">durables</span>, et
+          reconnaissent la mode comme un puissant vecteur de
+          <span class="highlight">récit culturel</span>.
+        </p>
+        <p>
+          Ensemble, nous pouvons créer des collections qui célèbrent notre
+          héritage tout en innovant pour l'avenir. Chaque pièce raconte une
+          histoire - travaillons à écrire le prochain chapitre de la mode
+          africaine.
+        </p>
+        <p>
+          "Fière de porter ma culture, déterminée à la partager avec le monde."
+        </p>
+        <a href="#contact" class="cta-btn">Proposer une collaboration</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Naomie Teki</h3>
+            <p>
+              Modèle et ambassadrice culturelle, spécialisée dans la promotion
+              des textiles et designers africains.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p><i class="fas fa-envelope"></i> contact@naomieteki.com</p>
+            <p><i class="fas fa-phone"></i> +225 07 07 77 77 77</p>
+            <p><i class="fas fa-map-marker-alt"></i> Abidjan, Côte d'Ivoire</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Partenariats</h3>
+            <p>
+              Pour les propositions de collaboration, défilés, shootings ou
+              projets créatifs.
+            </p>
+            <a href="#" class="cta-btn">Envoyer un projet</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 Naomie Teki. Tous droits réservés. "Proud to wear my
+            culture"
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Animation on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".animate-on-scroll").forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Header scroll effect
+        window.addEventListener("scroll", function () {
+          const header = document.querySelector("header");
+          if (window.scrollY > 100) {
+            header.style.backgroundColor = "rgba(26, 26, 26, 0.98)";
+            header.style.padding = "0.7rem 0";
+          } else {
+            header.style.backgroundColor = "rgba(26, 26, 26, 0.95)";
+            header.style.padding = "1rem 0";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
